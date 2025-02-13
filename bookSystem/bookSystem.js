@@ -14,9 +14,11 @@ function addBook() {
         books.push(book);
         showbooks();
         clearInputs();
+        console.log("added a book:", book);
     } else {
         alert('Please fill in all fields correctly.');
     }
+    console.log(books);
 }
 
 function showbooks() {
@@ -34,4 +36,11 @@ function clearInputs() {
     document.getElementById('authorName').value = '';
     document.getElementById('bookDescription').value = '';
     document.getElementById('pagesNumber').value = '';
+}
+
+function deleteBook() {
+    if (books.length > 0) {
+        books.pop();
+        showbooks();
+    }
 }
